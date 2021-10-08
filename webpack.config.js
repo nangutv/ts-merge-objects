@@ -5,6 +5,7 @@ module.exports = (env) => ({
     devtool: false,
     mode: 'production',
     entry: './src/index.ts',
+    target: [ 'web', 'es5' ],
     module: {
         rules: [
             {
