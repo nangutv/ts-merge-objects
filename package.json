@@ -1,6 +1,6 @@
 {
   "name": "@fingerartur/ts-merge-objects",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lib to deep merge two objects",
   "author": "Artur Finger",
   "license": "ISC",
