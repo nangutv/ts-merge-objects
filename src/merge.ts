@@ -4,7 +4,7 @@ const isObject = (x: unknown) => {
     return typeof x === 'object' && !Array.isArray(x) && x !== null
 }
 
-export const merge = (source: Obj, target: Obj) => {
+const mergeTwo = (source: Obj, target: Obj) => {
     if (!isObject(source) || !isObject(target)) {
         throw new Error('Wrong arguments - they are not objects')
     }
@@ -20,9 +20,21 @@ export const merge = (source: Obj, target: Obj) => {
 
         // merge colliding attributes if they are objects
         if (isObject(sourceValue) && isObject(targetValue)) {
-            result[key] = merge(sourceValue, targetValue)
+            result[key] = mergeTwo(sourceValue, targetValue)
         }
     })
 
     return result
+}
+
+export const merge = (...args: Obj[]) => {
+    if (args.length === 0) {
+        return null
+    }
+
+    if (args.length === 1) {
+        return args[0]
+    }
+
+    return args.reduce((acc, next) => mergeTwo(acc, next), {})
 }

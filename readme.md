@@ -1,6 +1,6 @@
 # Merge objects
 
-Deep merge two objects
+Deep merge two or more objects
 
 ```typescript
 import { merge } from '@fingerartur/ts-merge-objects'

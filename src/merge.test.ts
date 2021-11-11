@@ -73,6 +73,23 @@ describe('merge', () => {
          })
     })
 
+    it('can deep merge any number of objects', () => {
+        const result = merge(
+            {a: 1, b: { name: 'Tom' }},
+            {b: { name: 'Jerry' }},
+            {b: { name: 'Asterix' }, c: 5},
+        )
+        expect(result).toEqual({ a: 1, b: { name: 'Asterix' }, c: 5})
+
+        const result2 = merge(
+            {a: 1, b: { name: 'Tom' }},
+            {b: { name: 'Jerry' }},
+            {b: { name: 'Asterix' }, c: 5},
+            {b: { name: 'Obelix' }, c: 5},
+        )
+        expect(result2).toEqual({ a: 1, b: { name: 'Obelix' }, c: 5})
+    })
+
     it('should overwrite arrays instead of merging them', () => {
         const result = merge({a: [1,2]}, {a: [3,4]})
         expect(result).toEqual({ a: [3,4]})
