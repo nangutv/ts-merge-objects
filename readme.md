@@ -15,3 +15,9 @@ const result = merge(obj1, obj2)
 
 Notes:
 - arrays get overwritten just like any other attribute
+
+
+# Changelog
+
+- v1.0.0
+  - `merge` function

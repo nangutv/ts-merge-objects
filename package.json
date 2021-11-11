@@ -1,20 +1,22 @@
 {
-  "name": "@fingerartur/ts-merge-objects",
-  "version": "1.0.1",
-  "description": "Lib to deep merge two objects",
+  "name": "@nangu/ts-merge-objects",
+  "version": "1.0.0",
+  "description": "Lib to deep merge objects",
   "author": "Artur Finger",
   "license": "ISC",
-  "keywords": [ "deep", "merge" ],
-  "repository": "https://github.com/fingerartur/ts-merge-objects",
+  "keywords": [ "deep", "merge", "objects" ],
+  "repository": "https://github.com/nangutv/ts-merge-objects",
   "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=10"
   },
   "scripts": {
     "build": "rm -rf dist && webpack --config=./webpack.config.js",
     "test": "jest --config=./jest.config.js",
-    "prepublishOnly": "yarn build",
-    "pub": "npm publish --access public"
+    "prepublishOnly": "yarn test && yarn build"
   },
   "dependencies": {
   },
